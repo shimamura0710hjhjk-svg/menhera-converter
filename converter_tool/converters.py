@@ -277,19 +277,19 @@ def ojisan_converter(text):
 if __name__ == "__main__":
     test_msg = "やっほー○○チャン！元気ですか？楽しみです。○○ちゃんはおじさんとデートするのが好きですよね？おじさんをたくさん喜ばしてほしいな。おじさんは毎日○○ちゃんのことばっかり考えてるよ。"
     
-    print("--- おじさんモード ---")
-    print(ojisan_converter(test_msg))
+    print("--- メンヘラモード ---")
+    print(menhera_converter(test_msg))
     print()
     
     # 敬語ではない通常の文章もテスト
     test_msg2 = "今日は楽しかった。君のことが好きだ。明日も会いたいね。"
     print("--- 通常のタメ口 ---")
     print("入力:", test_msg2)
-    print("出力:", ojisan_converter(test_msg2))
+    print("出力:", menhera_converter(test_msg2))
     print()
     
     # 別のテスト例
     test_msg3 = "朝からずっと君のことばかり考えている。会いたい。"
     print("--- 別の例 ---")
     print("入力:", test_msg3)
-    print("出力:", ojisan_converter(test_msg3));
+    print("出力:", menhera_converter(test_msg3));
