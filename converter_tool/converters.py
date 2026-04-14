@@ -133,7 +133,7 @@ def menhera_converter(text):
 
    
      # 長い順でソート
-    sorted_polite_to_menhera_map = sorted(polpolite_to_menhera_map ite_to_casual_map.items(),
+    sorted_polite_to_menhera_map =sorted(polite_to_menhera_map.items(),
                             key=lambda x: len(x[0]), reverse=True)
     for polite,polite_to_menhera_map in sorted_polite_to_menhera_map:
         text = text.replace(polite, caspolite_to_menhera_mapual)
@@ -156,7 +156,7 @@ def menhera_converter(text):
     polite_to_menhera_final_sorted = sorted(polite_to_menhera_final.items(),
                                             key=lambda x: len(x[0]), reverse=True)
     for polite, menhera in polite_to_menhera_final_sorted:
-        text = text.replace(polite, menhera)
+        text = text.replace(polite, polite_to_menhera_map)
 
     # 語尾の徹底改修（ヒス構文・依存・自傷的表現）
     menhera_suffix_map = {
@@ -197,7 +197,7 @@ def menhera_converter(text):
         "思う": "思う。……って、どうせうちが何思っても関係ないもんね。🥺",
         "だよね": "だよね。……今の「間」は何？嘘つく時に目を逸らすの、癖だよね？🔪",
     }
-     sorted_menhera = sorted(casual_to_menhera_finall.items(),
+     sorted_menhera = sorted(casual_to_menhera_final.items(),
                             key=lambda x: len(x[0]), reverse=True)
     
 
