@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-おじさんコンバーター - セットアップ・実行スクリプト
+メンヘラコンバーター - セットアップ・実行スクリプト
 
 このスクリプトは以下を自動で行います:
 1. Pythonバージョンの確認
@@ -37,7 +37,7 @@ def install_requirements():
 def start_app():
     """アプリケーションの起動"""
     print("\n" + "=" * 60)
-    print("🧔💕 おじさんコンバーター 💕🧔")
+    print("💕 メンヘラコンバーター 💕")
     print("=" * 60)
     print("\n🚀 アプリケーションを起動中...\n")
     
@@ -53,9 +53,9 @@ def start_app():
         print(f"❌ app.py のインポートに失敗しました: {e}")
         raise
     
-    print("✓ サーバーが起動しました")
-    print("\n📱 ブラウザで http://localhost:5000 にアクセスしてください")
-    print("\n⌛ 終了するには Ctrl+C を押してください\n")
+    print("✓ サーバーが起動したよ！")
+    print("\n📱 ブラウザで http://localhost:5000 にアクセスして会いに来て")
+    print("\n⌛ 終了するには Ctrl+C を押して\n")
     print("=" * 60)
     
     app.run(host='0.0.0.0', port=5000, debug=True)
@@ -74,10 +74,10 @@ def main():
     try:
         start_app()
     except KeyboardInterrupt:
-        print("\n\n👋 アプリケーションを終了します")
+        print("\n\n👋 アプリケーションを終了します。マジ無理…")
         sys.exit(0)
     except Exception as e:
-        print(f"\n❌ エラーが発生しました: {e}")
+        print(f"\n❌ エラーが発生しました。最悪…: {e}")
         sys.exit(1)
 
 if __name__ == '__main__':
