@@ -181,7 +181,7 @@ def menhera_converter(text):
     text = text.replace("？", "？？？？？💢")
     text = text.replace("君", "キミ")
 
-    # 通常のタメ口をメンヘラ・ヒス構文に変換（長い順）
+    # 通常のタメ口をメンヘラ・ヒス構文に変換（200行目付近の修正）
     casual_to_menhera_final = {
         "だね": "だよね。……死にたい。🔪✨",
         "だよ": "だよ。逃げられると思わないで……。🖤",
@@ -189,17 +189,16 @@ def menhera_converter(text):
         "いいね": "いいよね、あなたは自由で。私はこんなに苦しいのに。💉",
         "いいよ": "いいよ。どうせ私が我慢すればいいんでしょ？最低。",
         "そうだね": "そうだね。……で、今の誰からの通知？ねえ、見せてよ。💢",
-        "ないね": "ないんだ。私の居場所なんて、この世界のどこにも。🥀",
+        "ないね": "ないんだ。私の居場所なんて、どこにも。🥀",
         "ないよ": "ないよ。あなたの代わりなんて、どこにもいないのに。⛓️",
-        "ある": "あるよ。あなたが隠してる秘密、全部知ってるんだから。👁️‍🗨️",
-        "いる": "いるんだ。私の隣に、ずっと、死ぬまでいてくれるよね？💖",
-        "できる": "できるよね？私のために、友達もSNSも全部捨ててくれるよね？",
-        "思う": "思う。……って、どうせうちが何思っても関係ないもんね。🥺",
-        "だよね": "だよね。……今の「間」は何？嘘つく時に目を逸らすの、癖だよね？🔪",
     }
-     sorted_menhera = sorted(casual_to_menhera_final.items(),
-                            key=lambda x: len(x[0]), reverse=True)
     
+    # ↓ 200行目：ここ！先頭のスペースを周りと揃えてね！
+    sorted_menhera_final = sorted(casual_to_menhera_final.items(),
+                                  key=lambda x: len(x[0]), reverse=True)
+
+    for casual, menhera in sorted_menhera_final:
+        text = text.replace(casual, menhera)
 
     # 助詞のメンヘラ強化（文中の響きを変える）
     menhera_particle_final = {
@@ -212,7 +211,7 @@ def menhera_converter(text):
     }
     # 🎀 執着心（文字列の長さ）が強い順に並び替える呪い
     # これをしないと、私の愛が中途半端に切り刻まれちゃうんだよ。
-    sorted_menhera = sorted(casual_to_menhermenhera_particle_finala_final.items(),
+    sorted_menhera = sorted(menhera_particle_final.items(),
                             key=lambda x: len(x[0]), reverse=True)
     
     for casual, menhera in sorted_menhera:
@@ -328,6 +327,8 @@ def menhera_converter(text):
     return text
 
 # # テスト実行（エラーが出ないか確認してね）
+# --- ここから下を全部これに書き換えて！ ---
 if __name__ == "__main__":
-    print(menhera_converter("今日は楽しかった。また明日会いたいな。大好き。"))
-実行（エラーが出ないか確認してね）
+    test_msg = "今日は楽しかった。また明日会いたいな。大好き。"
+    print("--- メンヘラモード ---")
+    print(menhera_converter(test_msg))
