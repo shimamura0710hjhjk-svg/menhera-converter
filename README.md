@@ -81,6 +81,6 @@ python3 run.py
 
 ## 技術スタック
 
-- Flask
+
 - JavaScript Fetch API
 - CSS Grid レイアウト
